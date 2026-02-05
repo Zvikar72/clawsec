@@ -8,7 +8,7 @@
 
 ## Secure Your OpenClaw Bots with a Complete Security Skill Suite
 
-<h4>Brought to you by <a href="https://prompt.security">Prompt Security</a>, the Complete Platform for GenAI Security</h4>
+<h4>Brought to you by <a href="https://prompt.security">Prompt Security</a>, the Platform for AI Security</h4>
 
 </div>
 
