@@ -243,7 +243,7 @@ cd "$(mktemp -d)"
 
 # 1) Download checksums.json and artifact
 curl -fsSL "$BASE/checksums.json" -o checksums.json
-curl -fsSL "$BASE/clawsec-suite.skill" -o clawsec-suite.skill
+curl -fsSL "$BASE/SKILL.md" -o SKILL.md
 
 # 2) Extract expected checksum from checksums.json
 EXPECTED_SHA256=$(jq -r '.files["clawsec-suite.skill"].sha256' checksums.json)
@@ -256,7 +256,7 @@ fi
 if command -v shasum >/dev/null 2>&1; then
   ACTUAL_SHA256=$(shasum -a 256 clawsec-suite.skill | awk '{print $1}')
 else
-  ACTUAL_SHA256=$(sha256sum clawsec-suite.skill | awk '{print $1}')
+  ACTUAL_SHA256=$(sha256sum SKILL.md | awk '{print $1}')
 fi
 
 # 4) Verify checksum (fail closed)
@@ -270,8 +270,7 @@ echo "Checksum verified: $ACTUAL_SHA256"
 
 # 5) Install
 rm -rf "$DEST"/*
-unzip -oq clawsec-suite.skill -d "$DEST"
-
+#download specific files by checksum list, or .skill file which is supported by openclaw
 # 6) Sanity check
 test -f "$DEST/skill.json"
 test -f "$DEST/SKILL.md"
@@ -298,25 +297,6 @@ Each release publishes a `checksums.json` file that contains version info and SH
 
 - `https://clawsec.prompt.security/releases/download/clawsec-suite-v<VERSION>/checksums.json`
 
-
-The checksums.json structure:
-
-```json
-{
-  "skill": "clawsec-suite",
-  "version": "0.0.3",
-  "generated_at": "2026-02-04T23:42:57Z",
-  "repository": "prompt-security/ClawSec",
-  "tag": "clawsec-suite-v0.0.3",
-  "files": {
-    "clawsec-suite.skill": {
-      "sha256": "339a4817aba054e6da5a6d838e2603d16592b43f6bdb7265d6b1918b22fe62cb",
-      "size": 4870,
-      "url": "https://clawsec.prompt.security/releases/download/clawsec-suite-v0.0.5/clawsec-suite.skill"
-    }
-  }
-}
-```
 
 To check for updates, compare the installed version against the latest `checksums.json`. See `HEARTBEAT.md` for the upgrade check procedure.
 
