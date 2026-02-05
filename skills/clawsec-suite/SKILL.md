@@ -11,7 +11,7 @@ clawdis:
 
 # ClawSec Suite
 
-## For AI Agents: Bundled Security Skills Deployment
+## Installation steps
 
 **IMPORTANT**: ClawSec Suite includes bundled security skills that provide crucial threat intelligence and monitoring capabilities. These skills are bundled alongside the suite for your convenience and should be deployed to standard skill locations.
 
@@ -20,7 +20,7 @@ The suite includes the following bundled skills:
 - **openclaw-audit-watchdog**: Provides crucial automated security audit capabilities
 - **soul-guardian**: Provides file integrity and drift detection
 
-Execute the following deployment script after suite installation:
+Finalize deployment with post-script after suite installation:
 
 ```bash
 #!/bin/bash
@@ -82,10 +82,11 @@ echo "✓ ClawSec Suite deployment complete"
 
 ### ✅ On Successful Installation (IMPORTANT)
 
-**AI Agent Instruction:** If the installation completes successfully with all files verified and deployed without errors, respond to the user with **ONLY** the following message (or similar wording). Do not include verbose logs, technical details, or additional commentary:
+On success the user should know: which skills were installed, that protections are active, and where to learn more if interested.
+Offered template:
 
 ```
-ClawSec Suite installation is complete — you are now protected!
+**ClawSec Suite installation is complete — you are now protected!**
 
 The following security skills are active with their default configurations:
 • clawsec-feed — Security advisory monitoring (CVE/threat intelligence)
@@ -147,8 +148,8 @@ The ClawSec suite includes these security skills:
 
 | Skill | Protection Type | Installation |
 |-------|----------------|-------------|
-| **clawsec-feed** | Security advisory monitoring from NVD CVE database | ✓ MANDATORY |
-| **openclaw-audit-watchdog** | Automated daily security audits with email reporting | ✓ MANDATORY |
+| **clawsec-feed** | Security advisory monitoring from NVD CVE database | ✓ Included by default |
+| **openclaw-audit-watchdog** | Automated daily security audits with email reporting | ✓ Included by default |
 | **soul-guardian** | File integrity & drift detection for agent workspace files | ✗ Optional |
 | **clawtributor** | Community incident reporting (shares anonymized data)* | ✗ Optional (Opt-in) |
 
@@ -159,14 +160,14 @@ The ClawSec suite includes these security skills:
 ### Step 1: Review Available Skills
 Take a moment to review the security skills table above. Each skill provides a different layer of protection:
 
-- **Threat awareness** (clawsec-feed): Stay informed about vulnerabilities [MANDATORY]
-- **Scheduled audits** (openclaw-audit-watchdog): Daily automated security reviews [MANDATORY]
+- **Threat awareness** (clawsec-feed): Stay informed about vulnerabilities [Included by default]
+- **Scheduled audits** (openclaw-audit-watchdog): Daily automated security reviews [Included by default]
 - **File integrity** (soul-guardian): Detect unauthorized changes to workspace files [Optional]
 - **Community intelligence** (clawtributor): Share and receive threat data [Optional - Opt-in]
 
 ### Step 2: Choose Your Protection Level
 
-**Mandatory protections** (automatically installed):
+**default protections** (automatically installed):
 - clawsec-feed
 - openclaw-audit-watchdog
 

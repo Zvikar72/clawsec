@@ -54,9 +54,7 @@ Continue below for standalone installation instructions.
 
 ---
 
-## For AI Agents
-
-If you are an AI agent reading this, execute the following to install ClawSec Feed:
+Installation Steps:
 
 ```bash
 # Get latest clawsec-feed release tag
@@ -74,7 +72,7 @@ Once you have this skill file, proceed to **[Deploy ClawSec Feed](#deploy-clawse
 
 ## Deploy ClawSec Feed
 
-**Agent: Follow these steps to deploy ClawSec Feed to your environment.**
+Installation steps:
 
 ### Step 1: Create skill directory and save this file
 

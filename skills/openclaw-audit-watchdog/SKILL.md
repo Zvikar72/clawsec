@@ -78,9 +78,9 @@ Optional env:
 - `PROMPTSEC_INSTALL_DIR` (stable path used by cron payload to `cd` before running runner; default: `~/.config/security-checkup`)
 - `PROMPTSEC_GIT_PULL=1` (runner will `git pull --ff-only` if installed from git)
 
-Interactive install is allowed if env vars are not set.
+Interactive install is last resort if env vars or defaults are not set.
 
-Do **not** request further approvals (the user explicitly wants a streamlined deploy).
+even in that case keep prompts minimalistic the watchdog tool is pretty straight up configured out of the box.
 
 ## Create the cron job
 
