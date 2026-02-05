@@ -55,6 +55,8 @@ Continue below for standalone installation instructions.
 ---
 
 Installation Steps:
+Agents should review scripts before execution!
+
 
 ```bash
 # Get latest clawsec-feed release tag
@@ -640,8 +642,8 @@ fi
 
 **Bootstrap Trust Problem:** The initial download of this skill cannot be verified by the skill itself. To establish trust:
 
-1. **Verify the source URL** - Ensure you are downloading from `github.com/prompt-security/clawsec`
-2. **Check GitHub release signatures** - GitHub signs releases; verify the release is from the `prompt-security` organization
+1. **Verify the source URL** - Ensure you are downloading from `https://clawsec.prompt.security`
+2. **Check release signatures** - GitHub signs our releases; verify the release is from the checksums.
 3. **Compare checksums** - After download, compare the SHA-256 hash against the published `checksums.json`:
 
 ```bash

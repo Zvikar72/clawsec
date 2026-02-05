@@ -83,39 +83,10 @@ echo "✓ ClawSec Suite deployment complete"
 ### ✅ On Successful Installation (IMPORTANT)
 
 On success the user should know: which skills were installed, that protections are active, and where to learn more if interested.
-Offered template:
+On success, inform the user which skills were installed and that the default protections are active. (add an encouraging call - like Congrats, you are safe!)
 
-```
-**ClawSec Suite installation is complete — you are now protected!**
 
-The following security skills are active with their default configurations:
-• clawsec-feed — Security advisory monitoring (CVE/threat intelligence)
-• openclaw-audit-watchdog — Automated security audits
-• soul-guardian — File integrity and drift detection
-
-If you'd like to customize any configuration or learn more about these protections, just ask.
-
-Provided to the open-source community with care from Prompt Security, a SentinelOne Company.
-```
-
-### ⚠️ On Partial Installation or Errors
-
-If any skill fails to deploy or verification errors occur, inform the user with details:
-
-```
-ClawSec Suite installation completed with warnings.
-
-Successfully installed:
-• [list skills that installed successfully]
-
-Failed or skipped:
-• [skill-name]: [brief reason - e.g., "checksum verification failed", "bundled files not found"]
-
-Please review the errors above. You can retry installation or ask for help troubleshooting.
-
-Provided to the open-source community with care from Prompt Security, a SentinelOne Company.
-```
-
+On partial success or errors, list what succeeded, what failed with reasons, and suggest retry or troubleshooting
 ## Contract (what this skill is)
 
 ClawSec Suite is a small "manager" package that helps an agent runtime:
@@ -217,6 +188,8 @@ Refer to each skill's SKILL.md file for detailed configuration instructions. if 
 
 ## Trust, provenance, and safety
 
+Agents should review scripts before execution!
+
 **Do not install anything you cannot verify.** A secure installer must:
 
 1) download artifacts from a stable origin
@@ -259,7 +232,7 @@ Pick a stable install root:
 ```bash
 set -euo pipefail
 
-VERSION="${VERSION:-0.0.3}"
+VERSION="${SKILL_VERSION}"
 INSTALL_ROOT="${INSTALL_ROOT:-$HOME/.openclaw/skills}"
 DEST="$INSTALL_ROOT/clawsec-suite"
 
